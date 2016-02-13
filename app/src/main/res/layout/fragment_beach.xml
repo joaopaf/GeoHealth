@@ -1,0 +1,162 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context="tk.geohealth.geohealth.fragments.BeachFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:id="@+id/scrollView" >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="GeoHealth"
+                android:id="@+id/geohealth"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="0.05"
+                android:textSize="35dp"
+                android:textColor="#76462A"
+                android:gravity="center" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:background="#4C7E491D"
+                android:padding="@dimen/activity_horizontal_margin">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/timeExposition"
+                    android:text="02:31"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="80sp"
+                    android:gravity="center"
+                    android:textColor="@color/colorAccent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView4"
+                    android:text="Tempo de exposição"
+                    android:gravity="center"
+                    android:textColor="@color/colorAccent"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center|center_horizontal">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/timeSolar"
+                    android:text="01:47"
+                    android:textSize="35dp"
+                    android:textColor="@color/colorAccent"
+                    android:gravity="center_vertical|right"
+                    android:layout_marginRight="20dp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/solar"
+                    android:id="@+id/imageButton" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:background="#4C7E491D"
+                android:paddingTop="@dimen/appbar_padding_top"
+                android:paddingBottom="@dimen/appbar_padding_top">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="32 ºC"
+                    android:id="@+id/temperatura"
+                    android:layout_weight="5"
+                    android:textSize="45dp"
+                    android:textColor="#ffffff"
+                    android:gravity="center" />
+
+                <View
+                    android:layout_width="5dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/colorAccent" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:layout_gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="UV 2"
+                        android:id="@+id/indiceuv"
+                        android:textSize="40dp"
+                        android:textColor="#ffffff"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:gravity="center"
+                        android:text="BAIXO"
+                        android:textColor="#ffffff"
+                        android:textSize="15dp"
+                        android:id="@+id/riscouv" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <!--Button
+                android:layout_width="300dp"
+                android:layout_height="150dp"
+                android:id="@+id/button"
+                android:background="@drawable/on"
+                android:layout_marginLeft="80dp"
+                /-->
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>
