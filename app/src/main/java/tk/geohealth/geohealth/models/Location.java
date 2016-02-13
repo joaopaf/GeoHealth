@@ -6,15 +6,15 @@ import java.io.Serializable;
  * Created by GeoHealth on 13/02/16.
  */
 public class Location implements Serializable {
-    private float lat;
-    private float lon;
+    private double lat;
+    private double lon;
 
-    public Location(float lat, float lon) {
+    public Location(double lat, double lon) {
         this.lat = lat;
         this.lon = lon;
     }
 
-    public float getLat() {
+    public double getLat() {
         return lat;
     }
 
@@ -22,7 +22,7 @@ public class Location implements Serializable {
         this.lat = lat;
     }
 
-    public float getLon() {
+    public double getLon() {
         return lon;
     }
 
