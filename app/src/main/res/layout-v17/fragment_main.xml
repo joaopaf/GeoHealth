@@ -1,0 +1,163 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/background"
+    tools:context="tk.geohealth.geohealth.MainActivity$PlaceholderFragment">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="GeoHealth"
+            android:id="@+id/geohealth"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.05"
+            android:textSize="44dp"
+            android:textColor="#76462A"
+            android:gravity="center"
+            android:layout_marginBottom="25dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textClock"
+            android:text="02:31"
+            android:layout_gravity="center_horizontal"
+            android:textSize="100sp"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:background="#4C7E491D"
+            android:layout_weight="0.06" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView4"
+            android:text="Tempo de exposição"
+            android:layout_gravity="center_horizontal"
+            android:textSize="30sp"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:layout_marginBottom="25sp"
+            android:background="#4C7E491D"
+            android:paddingBottom="5dp"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:weightSum="2"
+            android:paddingBottom="35dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textClock2"
+                android:text="01:47"
+                android:paddingRight="20dp"
+                android:layout_gravity="center_horizontal"
+                android:textSize="50dp"
+                android:textColor="#ffffff"
+                android:gravity="center"
+                android:layout_weight="1"
+                />
+
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="59dp"
+                android:text="Protetor"
+                android:gravity="center"
+                android:textSize="27dp"
+                android:textColor="#ffffff"
+                android:id="@+id/protetorbutton"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/protetorbutton"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="32ºC"
+                android:id="@+id/temperatura"
+                android:layout_weight="2.01"
+                android:textSize="50dp"
+                android:textColor="#ffffff"
+                android:gravity="center"
+                android:background="#99B4C0A8"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"/>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="178dp"
+                android:layout_height="90dp"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="UV 2"
+                    android:id="@+id/indiceuv"
+                    android:layout_weight="0.89"
+                    android:background="#9900ff00"
+                    android:textSize="50dp"
+                    android:textColor="#ffffff"
+                    android:gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="28dp"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:gravity="center"
+                    android:background="#9900ff00"
+                    android:text="BAIXO"
+                    android:textColor="#ffffff"
+                    android:textSize="25dp"
+                    android:id="@+id/riscouv"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <Button
+            android:layout_width="300dp"
+            android:layout_height="150dp"
+            android:id="@+id/button"
+            android:background="@drawable/on"
+            android:layout_marginLeft="80dp"
+            />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
