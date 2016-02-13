@@ -138,7 +138,8 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
             @Override
             public void onResponse(Response<Result> response, Retrofit retrofit) {
                 if(response.body() != null) {
-                    Toast.makeText(getApplicationContext(), "Está na Praia: " + response.body().isResult(), Toast.LENGTH_LONG).show();
+                    Result result = response.body();
+                    Toast.makeText(getApplicationContext(), "Está na Praia: " + result.isOnBeach() + "; " + result.getTemperature() + "; " + result.getUv(), Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(getApplicationContext(), "Erro ao testar tipo de local", Toast.LENGTH_SHORT).show();
                 }
