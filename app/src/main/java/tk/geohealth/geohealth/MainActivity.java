@@ -10,19 +10,12 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 
-import android.widget.TextView;
 import android.widget.Toast;
 
 import retrofit.Call;
@@ -82,6 +75,11 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
     }
 
     private void displayAppropriateFragment() {
+        if (isFinishing()) {
+            return;
+        }
+
+
         fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
@@ -91,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
             fragmentTransaction.replace(R.id.containerView, new OutOfBeach());
         }
 
-        fragmentTransaction.commit();
+        fragmentTransaction.commitAllowingStateLoss();
     }
 
 
@@ -127,6 +125,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
 
             if(location.distanceTo(solarExposition.getInitialLocation()) > 300) {
                 sessionManager.removeLastSolarExposition();
+                displayAppropriateFragment();
             }
 
         } else {
@@ -136,11 +135,13 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
             call.enqueue(new Callback<Result>() {
                 @Override
                 public void onResponse(Response<Result> response, Retrofit retrofit) {
-                    if(response.body() != null) {
-                        Result result = response.body();
+                    Result result = response.body();
+                    if(result != null) {
 
-                        SolarExposition solarExposition = new SolarExposition(location);
-                        sessionManager.setLastSolarExposition(solarExposition);
+                        if(result.isOnBeach()) {
+                            SolarExposition solarExposition = new SolarExposition(location, result.getTemperature(), result.getUv());
+                            sessionManager.setLastSolarExposition(solarExposition);
+                        }
 
                         displayAppropriateFragment();
 

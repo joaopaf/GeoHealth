@@ -72,7 +72,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="fill_parent"
                     android:id="@+id/timeSolar"
-                    android:text="01:47"
+                    android:text="00:00"
                     android:textSize="35dp"
                     android:textColor="@color/colorAccent"
                     android:gravity="center_vertical|right"
@@ -126,7 +126,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="UV 2"
+                        android:text="UV 3"
                         android:id="@+id/indiceuv"
                         android:textSize="40dp"
                         android:textColor="#ffffff"
@@ -137,7 +137,7 @@
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:gravity="center"
-                        android:text="BAIXO"
+                        android:text="MODERADO"
                         android:textColor="#ffffff"
                         android:textSize="15dp"
                         android:id="@+id/riscouv" />
@@ -145,6 +145,17 @@
 
             </LinearLayout>
 
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Não se Esqueça dos Óculos de Sol!"
+                android:id="@+id/dica"
+                android:layout_marginTop="120dp"
+                android:textSize="20dp"
+                android:textColor="#ffffff"
+                android:gravity="center" />
 
             <!--Button
                 android:layout_width="300dp"

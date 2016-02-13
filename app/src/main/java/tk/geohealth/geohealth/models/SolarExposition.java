@@ -16,11 +16,17 @@ public class SolarExposition  implements Serializable {
     private Location initialLocation;
     private List<SolarCream> solarCreamList;
 
-    public SolarExposition(Location location) {
+    private float uv;
+    private float temperature;
+    private GregorianCalendar lastModification;
+
+    public SolarExposition(Location location, float temperature, float uv) {
         this.startDate = new GregorianCalendar();
         this.over = false;
         this.initialLocation = location;
         this.solarCreamList = new ArrayList<>();
+        this.temperature = temperature;
+        this.uv = uv;
     }
 
     public void close() {
@@ -54,5 +60,27 @@ public class SolarExposition  implements Serializable {
 
     public Location getInitialLocation() {
         return initialLocation;
+    }
+
+    public float getUv() {
+        return uv;
+    }
+
+    public void setUv(float uv) {
+        this.uv = uv;
+        this.lastModification = new GregorianCalendar();
+    }
+
+    public float getTemperature() {
+        return temperature;
+    }
+
+    public void setTemperature(float temperature) {
+        this.temperature = temperature;
+        this.lastModification = new GregorianCalendar();
+    }
+
+    public GregorianCalendar getLastModification() {
+        return lastModification;
     }
 }

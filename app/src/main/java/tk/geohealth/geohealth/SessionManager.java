@@ -45,6 +45,7 @@ public class SessionManager {
     }
 
     public void removeLastSolarExposition() {
-        this.editor.remove(LAST_EXPOSITION);
+        editor.remove(LAST_EXPOSITION);
+        editor.commit();
     }
 }
