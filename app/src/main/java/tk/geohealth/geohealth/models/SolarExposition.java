@@ -1,5 +1,7 @@
 package tk.geohealth.geohealth.models;
 
+import android.location.Location;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
@@ -15,14 +17,14 @@ public class SolarExposition  implements Serializable {
     private List<SolarCream> solarCreamList;
 
     public SolarExposition(Location location) {
-        startDate = new GregorianCalendar();
-        over = false;
-        initialLocation = location;
-        solarCreamList = new ArrayList<>();
+        this.startDate = new GregorianCalendar();
+        this.over = false;
+        this.initialLocation = location;
+        this.solarCreamList = new ArrayList<>();
     }
 
     public void close() {
-        over = true;
+        this.over = true;
         //Eliminar todos os alarms definidos
     }
 
@@ -31,9 +33,26 @@ public class SolarExposition  implements Serializable {
     }
 
     public SolarCream getLastCream() {
-        if (solarCreamList.isEmpty())
+        if (this.solarCreamList.isEmpty())
             return null;
-        return solarCreamList.get(solarCreamList.size() - 1);
+        return this.solarCreamList.get(this.solarCreamList.size() - 1);
     }
 
+    public int getMinutesSinceExposureStart() {
+        GregorianCalendar now = new GregorianCalendar();
+        long millis = now.getTimeInMillis() - this.startDate.getTimeInMillis();
+
+        return (int) ((millis / 1000) / 60);
+    }
+
+    public int getMinutesSinceLastSolarCream() {
+        GregorianCalendar now = new GregorianCalendar();
+        long millis = now.getTimeInMillis() - this.getLastCream().getData().getTimeInMillis();
+
+        return (int) ((millis / 1000) / 60);
+    }
+
+    public Location getInitialLocation() {
+        return initialLocation;
+    }
 }
